@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3</title>
+</head>
+<body>
+    <div id = "box1">
+        <p id = "text1"> first </p>
+        <p id = "text2"> second </p>
+        <p id = "text3"> third </p>
+        <p id = "text4"> fourth </p>
+    <div>
+    <script>
+        var pcollection = [];
+        for (var i = 0;i < 5;i++) {
+            pcollection.push(document.createElement('p'));
+            pcollection[i].textContent = 'New paragraph with number ' + i;
+            pcollection[i].id = 'p' + i;
+        }
+        console.log(pcollection);
+        box1.prepend(...pcollection);
+    </script>
+</body>
+</html>
