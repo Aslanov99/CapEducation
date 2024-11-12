@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3</title>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        var divs = document.getElementsByClassName("box");
+        for (var i = 0;i < divs.length;i++) {
+            divs[i].style.height = '100px';
+            divs[i].style.width = '100px';
+            divs[i].style.margin = '10px';
+            divs[i].style.backgroundColor = 'red';
+            console.log(divs[i]);
+        }
+        for (var i = 1;i < divs.length;i += 2) {
+            divs[i].style.backgroundColor = 'blue';
+        }
+    </script>
+</body>
+</html>
