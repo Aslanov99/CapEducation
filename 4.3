@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3</title>
+</head>
+<body>
+    <script>
+        var IQ_scores = [100, 90, 250, 240, 200, 190, 170, 220];
+        var genius_number = 0;
+        IQ_scores.forEach(function (item, index, array) {
+            genius_number += item >= 200;
+            console.log(item, genius_number);
+        });
+        console.log(genius_number);
+    </script>
+</body>
+</html>
