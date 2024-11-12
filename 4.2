@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.2</title>
+</head>
+<body>
+    <script>
+        //the following code will check if a student is eligible to study in Harvard
+        var IELTS_ok = prompt("What is your IELTS score?") >= 7.5;
+        var SAT_ok = prompt("What is your SAT score?") >= 1510;
+        var GPA_ok = prompt("What is your GPA?") >= 3.7;
+        var Age_ok = prompt("What is your age?") >= 15;
+        var everything_ok = IELTS_ok && SAT_ok && GPA_ok && Age_ok;
+        console.log(everything_ok ? alert("Great!!") : alert("Sorry..."));
+    </script>
+</body>
+</html>
