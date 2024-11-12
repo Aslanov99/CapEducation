@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.8</title>
+    <style>
+        body {
+            height: 1000px;
+            background-color: #ff98004d;
+            margin: 0;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #box {
+            width: 50%;
+            height: 100%;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+        }
+        #h1 {
+            margin-top: 0;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+        .blur {
+            filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div id = "box">
+        <h1 id = "h1"> Orange </h1>
+        <img src = "orange.jpg" data-src = "orange.jpg" alt="orange" class="blur">
+        <p id = "text1"> The orange, also called sweet orange to distinguish it from the bitter orange (Citrus × aurantium), is the fruit of a tree in the family Rutaceae. Botanically, this is the hybrid Citrus × sinensis, between the pomelo (Citrus maxima) and the mandarin orange (Citrus reticulata). The chloroplast genome, and therefore the maternal line, is that of pomelo. The sweet orange has had its full genome sequenced. 
+        </p>
+        <p id = "text2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste dicta nesciunt distinctio sequi omnis dolor magni numquam recusandae earum cupiditate exercitationem veritatis reiciendis suscipit quam sed sunt, corporis quidem perspiciatis?
+        </p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", 
+            function() {
+                var counter = 0;
+                function LazyLoad() {
+                    var lazy = document.querySelector(".blur");
+                    if (lazy.hasAttribute('data-src')) {
+                        console.log("Working...");
+                        var data = lazy.getAttribute('data-src');
+                        lazy.setAttribute('src', data);
+                        lazy.removeAttribute('data-src');
+                        lazy.classList.remove('blur');
+                    }
+                    document.removeEventListener('scroll', LazyLoad);
+                }
+                document.addEventListener("scroll", LazyLoad, false);
+
+                /*
+                document.addEventListener("scroll", 
+                function() {
+                    counter++;
+                    console.log("Scrolling..." + counter);
+                }, 
+                false);*/
+            }
+        )
+    </script>
+</body>
+</html>
