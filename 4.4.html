@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3</title>
+</head>
+<body>
+    <script>
+        var car = {
+            color: 'white',
+            brand: 'unknown',
+            give_color: function() {
+                this.color = prompt("What color would you like your car to be?");
+            },
+            give_brand: function() {
+                this.brand = prompt("What brand would you like your car to be?");
+            },
+            fuel: 0,
+            fuel_limit: 100,
+            distance_travelled: 0,
+            fill: function()
+            {
+                this.fuel = this.fuel_limit;
+            },
+            drive: function(time) {
+                for (let i = 0;i < time;i++) {
+                    if (this.fuel == 0) {
+                        alert("Oopsies, something went wrong, you have 0 fuel...");
+                        break;
+                    }
+                    this.fuel--, this.distance_travelled++;
+                }
+                console.log("Amount of fuel left: " + this.fuel);
+            }
+        }
+    </script>
+</body>
+</html>
